@@ -1,4 +1,4 @@
-('C:\\Users\\shqkd\\Documents\\need\\build\\AudioSwitcher\\PYZ-00.pyz',
+('C:\\Users\\shqkd\\git\\AudioSwitcher\\build\\AudioSwitcher\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\shqkd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),

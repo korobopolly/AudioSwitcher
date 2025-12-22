@@ -24,8 +24,18 @@ import pystray
 from pystray import MenuItem as item
 
 
-# Config file path (same directory as script)
-CONFIG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'audio_switcher_config.json')
+# Config file path
+# PyInstaller로 패키징된 경우 실행 파일 위치 사용, 아니면 스크립트 위치 사용
+def get_config_path():
+    if getattr(sys, 'frozen', False):
+        # PyInstaller로 패키징된 .exe 파일인 경우
+        base_dir = os.path.dirname(sys.executable)
+    else:
+        # 일반 Python 스크립트로 실행되는 경우
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_dir, 'audio_switcher_config.json')
+
+CONFIG_FILE = get_config_path()
 
 
 def kill_existing_instance():
